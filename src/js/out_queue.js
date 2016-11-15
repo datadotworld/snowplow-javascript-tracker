@@ -304,9 +304,9 @@
         newRequest = newRequest.replace(queryUrlRe, function (match, base) {
           return  [base, '(filtered)'].join('');
         });
-        if (newRequest.length > 2000) {
-          newRequest = newRequest.replace(/ue_px=[^&]*/, ['ue_pr=', encodeURIComponent(json2.stringify({filtered: true, length: newRequest.length}))].join(''));
-        }
+      }
+      if (newRequest.length > 2000) {
+        newRequest = newRequest.replace(/ue_px=[^&]*/, ['ue_pr=', encodeURIComponent(json2.stringify({filtered: true, length: newRequest.length}))].join(''));
       }
       return newRequest;
     }
